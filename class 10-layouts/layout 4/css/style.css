@@ -1,0 +1,110 @@
+
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+  margin: 5px;
+ 
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+.left{
+  width: 20%;
+  height: 680px;
+  padding: 15px 10px;
+  background: white;
+  float: left;
+}
+
+ul > a{
+  color: grey;
+  font-size: 25px;
+  text-decoration: none;
+}
+ul li{
+  padding: 15px 10px;
+}
+
+.left ul li a{
+  color: grey;
+  font-size: 20px;
+ 
+  text-decoration: none;
+  
+}
+section img{
+  color: brown;
+}
+h1{
+  font-weight: 1000;
+}
+.picOne{
+  width: 650px;
+  height: 250px;
+}
+span{
+  font-weight: 800;
+}
+.smallSection{
+  width: 50%;
+  padding: 10px;
+  float: left;
+}
+
+
+
+/* center section here please  */
+
+.center{
+  width: 50%;
+  height: 680px;
+  padding: 10px;
+  background: whitesmoke;
+  float: left;
+}
+
+
+
+/* right section here please */
+.right{
+  width: 30%;
+  height: 680px;
+  padding: 10px;
+  background: white;
+  float: left;
+}
+.colorGrey{
+  color: grey;
+}
+
+
+
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
