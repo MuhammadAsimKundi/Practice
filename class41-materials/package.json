@@ -1,0 +1,18 @@
+{
+  "name": "class41-materials",
+  "version": "1.0.0",
+  "description": "practice of class41-materials CRUD",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Asim",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "mongodb": "^6.11.0"
+  }
+}

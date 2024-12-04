@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Current Rappers</title>
+</head>
+<body>
+    <h1>Current Rappers</h1>
+    <ul class="rappers">
+        <% for(let i = 0; i < info.length; i++) { %>
+            <li class="rapper">
+                <span><%= info[i].stageName %></span>
+                <span><%= info[i].birthName %></span>
+                <span><%= info[i].likes %></span>
+                <i class="fa fa-thumbs-up"></i>
+                <i class="fa fa-trash"></i>
+            </li>
+        <% } %>
+    </ul>
+
+    <h2>Add A Rapper:</h2>
+    <form action="/addRapper" method="POST">
+        <input type="text" placeholder="Stage Name" name="stageName">
+        <input type="text" placeholder="Birth Name" name="birthName">
+        <input type="submit" value="Add Rapper">
+    </form>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
