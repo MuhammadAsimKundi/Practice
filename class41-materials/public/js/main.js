@@ -8,7 +8,7 @@ Array.from(deleteText).forEach((element) => {
 
 // Attach event listeners for like actions
 Array.from(thumbText).forEach((element) => {
-    element.addEventListener('click', addLike)
+    element.addEventListener('click', addOneLike)
 })
 
 // Function to handle deleting a rapper
@@ -35,20 +35,20 @@ async function deleteRapper() {
 }
 
 // Function to handle adding a like
-async function addLike() {
-    const sName = this.parentNode.childNodes[1].innerText.trim()
-    const bName = this.parentNode.childNodes[3].innerText.trim()
-    const likes = parseInt(this.parentNode.childNodes[5].innerText.trim())
-    console.log('Attempting to add like to:', sName, bName, likes)  // Debugging line
+async function addOneLike() {
+    const sName = this.parentNode.childNodes[1].innerText
+    const bName = this.parentNode.childNodes[3].innerText
+    const tlikes = Number(this.parentNode.childNodes[5].innerText)
+    console.log('Attempting to add like to:', sName, bName, tlikes)  // Debugging line
 
     try {
         const response = await fetch('/addOneLike', {
-            method: 'PUT',
+            method: 'put',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 'stageNameS': sName,
                 'birthNameS': bName,
-                'likesS': likes
+                'likesS': tlikes
             })
         })
         const data = await response.json()

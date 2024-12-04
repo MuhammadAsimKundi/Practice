@@ -5,11 +5,11 @@
     const PORT = 2121
     require('dotenv').config()
 
-    let db,
-        dbConnectionStr = process.env.DB_STRING;
-        dbName = 'rap';
+    let db;
+    const dbConnectionStr = process.env.DB_STRING;
+    const dbName = 'rap';
 
-    MongoClient.connect(dbConnectionStr, {useUnifiedTopology: true})
+    MongoClient.connect(dbConnectionStr)
     .then(client => {
         console.log(`Connected to ${dbName} database.`);
         db = client.db(dbName);
@@ -46,11 +46,9 @@
 
     // Route for adding a like
     app.put('/addOneLike', (request, response) => {
-    const { stageNameS, birthNameS, likesS } = request.body
-    console.log('Adding like to:', stageNameS, birthNameS, likesS)  // Debugging line
     db.collection('rappers').updateOne(
-        { stageName: stageNameS, birthName: birthNameS, likes: likesS },
-        { $set: { likes: likesS + 1 } },
+        { stageName: request.body.stageNameS, birthName: request.body.birthNameS, likes: request.body.likesS },
+        { $set: { likes: request.body.likesS + 1 } },
         { sort: { _id: -1 }, upsert: false }
     )
         .then(result => {
